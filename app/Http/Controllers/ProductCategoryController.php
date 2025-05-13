@@ -57,7 +57,7 @@ class ProductCategoryController extends Controller
                 [
                     'errors' => $validator->errors(),
                     'errorMessage' => 'Validasi Error, Silahkan
-   lengkapi data terlebih dahulu'
+                    lengkapi data terlebih dahulu'
                 ]
             );
         }

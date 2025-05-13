@@ -1,7 +1,7 @@
 <div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">E-Commerce</a>
+            <a class="navbar-brand" href="/">Shop Shoes</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -23,14 +23,16 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
-                                    href="/category/pria">Pria</a></li>
+                                    href="/category/Compass Velocity">Compass Velocity</a></li>
                             <li><a class="dropdown-item"
-                                    href="/category/wanita">Wanita</a></li>
-                            <li>
+                                    href="/category/Compass Retrograde">Compass Retrograde</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/category/Compass slip on">Compass slip on</a></li>
+                            <!-- <li>
                                 <hr class="dropdown-divider">
-                            </li>
+                            </li> -->
                             <li><a class="dropdown-item"
-                                    href="/category/anak-anak">Anak-Anak</a></li>
+                                    href="/category/Compass Gazelle">Compass Gazelle</a></li>
                         </ul>
                     </li>
                 </ul>
