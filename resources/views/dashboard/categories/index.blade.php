@@ -81,19 +81,20 @@
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 
-                        <flux:dropdown>
-                            <flux:button
-                                icon:trailing="chevron-down">Actions</flux:button>
-                            <flux:menu>
-                                <flux:menu.item icon="pencil" href="{{route('categories.edit', $category->id) }}">Edit</flux:menu.item>
-                                <flux:menu.item icon="trash"
-                                    variant="danger" onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this category?')) document.getElementById('delete-form-{{ $category->id }}').submit();">Delete</flux:menu.item>
-                                <form id="delete-form-{{ $category->id }}" action="{{ route('categories.destroy', $category->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                </form>
-                            </flux:menu>
-                        </flux:dropdown>
+                    <flux:button 
+                    href="{{ route('categories.edit', $category->id) }}" 
+                    icon="pencil" 
+                    variant="primary" 
+                    size="sm">Edit</flux:button>
+
+                    <flux:button 
+                    href="{{ route('categories.destroy', $category->id) }}" 
+                    icon="trash" 
+                    variant="danger" 
+                    size="sm"
+                    onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this category?')) {
+                        document.getElementById('delete-form-{{$category->id }}').submit();
+                    }">Delete</flux:button>
                     </td>
                 </tr>
                 @endforeach
