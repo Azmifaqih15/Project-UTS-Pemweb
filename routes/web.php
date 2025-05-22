@@ -7,7 +7,10 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 
+use App\Http\Controllers\CustomerAuthController;
 
+// Route::get('customer/login', [CustomerAuthController::class, 'login'])->name('customer.login');
+// Route::get('customer/register', [CustomerAuthController::class, 'register'])->name('customer.register');
 
 Route::get('/',[HomepageController::class,'index'])->name('home');
 Route::get('products', [HomepageController::class, 'products']);
@@ -29,6 +32,21 @@ Route::group(['prefix'=>'dashboard'], function(){
 
 Route::prefix('/dashboard')->middleware(['auth'])->group(function () {
     Route::resource('products', ProductController::class);
+});
+
+Route::group(['prefix'=>'customer'], function(){
+ Route::controller(CustomerAuthController::class)->group(function(){
+ //tampilkan halaman login
+ Route::get('login','login')->name('customer.login');
+ //aksi login
+ Route::post('login','store_login')->name('customer.store_login');
+ //tampilkan halaman register
+ Route::get('register','register')->name('customer.register');
+ //aksi register
+ Route::post('register','store_register')->name('customer.store_register');
+ //aksi logout
+ Route::post('logout','logout')->name('customer.logout');
+ });
 });
 
 Route::middleware(['auth'])->group(function () {

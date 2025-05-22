@@ -1,6 +1,6 @@
 <x-layouts.app :title="__('Products')">
     <div class="relative mb-6 w-full">
-        <flux:heading size="xl">Add New Product</flux:heading>
+        <flux:heading size="xl">Tambah Product</flux:heading>
         <flux:subheading size="lg" class="mb-6">Manage data Products</flux:subheading>
         <flux:separator variant="subtle" />
     </div>
