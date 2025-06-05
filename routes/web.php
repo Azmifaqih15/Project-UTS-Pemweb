@@ -48,6 +48,12 @@ Route::group(['prefix'=>'customer'], function(){
  Route::post('logout','logout')->name('customer.logout');
  });
 });
+Route::group(['prefix' => 'dashboard','middleware' => ['auth', 'verified']], function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('categories', ProductCategoryController::class);
+    Route::resource('products', ProductController::class);
+  
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
